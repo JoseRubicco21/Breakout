@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,5 +19,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public static void showPoints()
+    {
+        Debug.Log("Puntuacion: " + Score);
     }
 }

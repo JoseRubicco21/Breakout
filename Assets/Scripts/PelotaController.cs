@@ -7,6 +7,7 @@ public class PelotaController : MonoBehaviour
     [SerializeField] int force = 1;
     [SerializeField] float delay = 2.0f;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -41,8 +42,9 @@ public class PelotaController : MonoBehaviour
     {
         if(other.gameObject.tag =="Brick")
         {
-           Debug.Log(other.gameObject.GetComponent<Brick>().getPuntuacion());
+           GameManager.UpdateScore(other.gameObject.GetComponent<Brick>().getPuntuacion());
            Destroy(other.gameObject);
+           GameManager.showPoints();
         }
     }
 
