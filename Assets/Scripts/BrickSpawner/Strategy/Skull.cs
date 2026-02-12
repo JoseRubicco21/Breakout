@@ -26,8 +26,8 @@ public class Skull : BrickSpawnerStrategy
                     Instantiate(
                         settings.getPrefabs()[0],
                         new Vector2(
-                            i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap()) + settings.getOffset(),
-                            j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap())),
+                            i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap()) + settings.getXOffset(),
+                            j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset()),
                         Quaternion.identity
                     );
                 }

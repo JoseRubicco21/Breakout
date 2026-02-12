@@ -7,7 +7,9 @@ public class BrickSpawnerSettings : MonoBehaviour
     [SerializeField] private int COLS = 8;
     [SerializeField] private float X_GAP = 0.1f;
     [SerializeField] private float Y_GAP = 0.1f;
-    [SerializeField] private float offset = 2.7f;
+    [SerializeField] private float x_offset = 2.7f;
+    [SerializeField] private float y_offset = 2.7f;
+
     [SerializeField] private GameObject[] prefabs;
 
     public int getRows()
@@ -35,8 +37,13 @@ public class BrickSpawnerSettings : MonoBehaviour
         return prefabs;
     }
 
-    public float getOffset()
+    public float getXOffset()
     {
-        return offset;
+        return x_offset;
+    }
+
+      public float getYOffset()
+    {
+        return y_offset;
     }
 }

@@ -2,16 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject prefab;
-    public GameObject prefab2;
-    private float offset = -2.7f;
-    [SerializeField] int ROWS = 5;
-    [SerializeField] int COLS = 8;
-    [SerializeField] float X_SEPARATION = 0.1f;
-    [SerializeField] float Y_SEPARATION = 0.1f;
-    [SerializeField] BrickSpawnerStrategy strategy;
 
+    public static int Score { get; private set; } = 0; 
+    public static int Lives { get; private set; } = 3;
+
+    public static void UpdateScore(int points) { Score += points; }
+
+    public static void UpdateLives() { Lives--; } 
 
     void Start()
     {

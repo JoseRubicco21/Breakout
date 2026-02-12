@@ -21,8 +21,8 @@ public class GradientCols : BrickSpawnerStrategy
                 Instantiate(
                     settings.getPrefabs()[prefabIndex],
                     new Vector2(
-                        i * (settings.getPrefabs()[prefabIndex].transform.localScale.x + settings.getXGap()) + settings.getOffset(),
-                        j * (settings.getPrefabs()[prefabIndex].transform.localScale.y + settings.getYGap())),
+                        i * (settings.getPrefabs()[prefabIndex].transform.localScale.x + settings.getXGap()) + settings.getXOffset(),
+                        j * (settings.getPrefabs()[prefabIndex].transform.localScale.y + settings.getYGap())+ settings.getYOffset()),
                     Quaternion.identity
                 );
             }
