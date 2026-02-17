@@ -46,4 +46,9 @@ public class BrickSpawnerSettings : MonoBehaviour
     {
         return y_offset;
     }
+
+    public int getTotalBricks()
+    {   // No sirve para todas las estrategias. Cuidado.
+        return ROWS * COLS;
+    }
 }

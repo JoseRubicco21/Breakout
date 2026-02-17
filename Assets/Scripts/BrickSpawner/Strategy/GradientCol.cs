@@ -4,7 +4,7 @@ using BrickSystem;
 [CreateAssetMenu(fileName = "GradientCols", menuName = "Brick Spawner/Strategies/Gradient Cols")]
 public class GradientCols : BrickSpawnerStrategy
 {
-    public override void SpawnStrategy(BrickSpawnerSettings settings)
+    public override void SpawnStrategy(BrickSpawnerSettings settings, Transform parent)
     {
         // Gradient pattern: 0, 1, 2, 2, 1, 0, 0, 1, 2, 2, 1, 0...
         int[] gradientPattern = { 0, 1, 2, 3, 3, 2, 1,0   };
@@ -22,7 +22,7 @@ public class GradientCols : BrickSpawnerStrategy
                     settings.getPrefabs()[prefabIndex],
                     new Vector2(
                         i * (settings.getPrefabs()[prefabIndex].transform.localScale.x + settings.getXGap()) + settings.getXOffset(),
-                        j * (settings.getPrefabs()[prefabIndex].transform.localScale.y + settings.getYGap())+ settings.getYOffset()),
+                        j * (settings.getPrefabs()[prefabIndex].transform.localScale.y + settings.getYGap())+ settings.getYOffset() + parent.position.y),
                     Quaternion.identity
                 );
             }

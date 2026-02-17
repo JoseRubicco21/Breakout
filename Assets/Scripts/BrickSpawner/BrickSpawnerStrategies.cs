@@ -3,7 +3,7 @@ using BrickSystem;
 using UnityEditor;
 public abstract class BrickSpawnerStrategy  : ScriptableObject
 {
-    public abstract void SpawnStrategy(BrickSpawnerSettings settings);
+    public abstract void SpawnStrategy(BrickSpawnerSettings settings, Transform parent);
 }
 
 

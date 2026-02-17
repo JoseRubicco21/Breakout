@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2731707530466280562, guid: cfc6b4511b46452f09398f9355fd283f, type: 3}
       propertyPath: puntuacion
-      value: -10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6799085874566949526, guid: cfc6b4511b46452f09398f9355fd283f, type: 3}
       propertyPath: m_LocalPosition.x

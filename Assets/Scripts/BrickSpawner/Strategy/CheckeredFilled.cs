@@ -4,7 +4,7 @@ using BrickSystem;
 [CreateAssetMenu(fileName = "CheckeredFilled", menuName = "Brick Spawner/Strategies/CheckeredFilled")]
 public class CheckeredFilled : BrickSpawnerStrategy
 {
-    public override void SpawnStrategy(BrickSpawnerSettings settings)
+    public override void SpawnStrategy(BrickSpawnerSettings settings, Transform parent)
     {
         for(int i = 0; i < settings.getCols(); i++)
         {
@@ -16,8 +16,8 @@ public class CheckeredFilled : BrickSpawnerStrategy
                     Instantiate(
                         settings.getPrefabs()[0],
                         new Vector2(
-                                                 i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap() ) +settings.getXOffset(),
-                        j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset()),
+                        i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap() ) +settings.getXOffset(),
+                        j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset() + parent.position.y),
                         Quaternion.identity
                     );
                 } else
@@ -26,7 +26,7 @@ public class CheckeredFilled : BrickSpawnerStrategy
                         settings.getPrefabs()[1],
                         new Vector2(
                                                  i * (settings.getPrefabs()[1].transform.localScale.x + settings.getXGap() ) +settings.getXOffset(),
-                        j * (settings.getPrefabs()[1].transform.localScale.y + settings.getYGap()) + settings.getYOffset()),
+                        j * (settings.getPrefabs()[1].transform.localScale.y + settings.getYGap()) + settings.getYOffset() + parent.position.y),
                         Quaternion.identity
                     );
                 }

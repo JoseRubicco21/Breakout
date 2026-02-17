@@ -4,7 +4,7 @@ using BrickSystem;
 [CreateAssetMenu(fileName = "Skull", menuName = "Brick Spawner/Strategies/Skull")]
 public class Skull : BrickSpawnerStrategy
 {
-    public override void SpawnStrategy(BrickSpawnerSettings settings)
+    public override void SpawnStrategy(BrickSpawnerSettings settings, Transform parent)
     {
         // 5x5 Skull pattern (1 = brick, 0 = empty)
         // Reading from bottom to top (j=0 is bottom row)
@@ -27,7 +27,7 @@ public class Skull : BrickSpawnerStrategy
                         settings.getPrefabs()[0],
                         new Vector2(
                             i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap()) + settings.getXOffset(),
-                            j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset()),
+                            j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset()+ parent.position.y),
                         Quaternion.identity
                     );
                 }

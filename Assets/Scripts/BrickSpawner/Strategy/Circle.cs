@@ -4,7 +4,7 @@ using BrickSystem;
 [CreateAssetMenu(fileName = "Circle", menuName = "Brick Spawner/Strategies/Circle")]
 public class Circle : BrickSpawnerStrategy
 {
-    public override void SpawnStrategy(BrickSpawnerSettings settings)
+    public override void SpawnStrategy(BrickSpawnerSettings settings, Transform parent)
     {
         // Calculate center of the grid
         float centerX = (settings.getCols() - 1) / 2f;
@@ -29,7 +29,8 @@ public class Circle : BrickSpawnerStrategy
                         settings.getPrefabs()[0],
                         new Vector2(
                         i * (settings.getPrefabs()[0].transform.localScale.x + settings.getXGap()) +  settings.getXOffset(),
-                        j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset()),
+                        j * (settings.getPrefabs()[0].transform.localScale.y + settings.getYGap()) + settings.getYOffset() + parent.position.y
+                        ),
                         Quaternion.identity
                     );
                     
